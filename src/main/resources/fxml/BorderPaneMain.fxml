@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <top>
+      <VBox alignment="TOP_CENTER" prefHeight="129.0" prefWidth="1200.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="%file">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#closeApplication" text="%close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%edit">
+                     <items>
+                        <RadioMenuItem mnemonicParsing="false" onAction="#setCaspian" text="%caspian">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="styleGroup" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem mnemonicParsing="false" onAction="#setModena" selected="true" text="%modena" toggleGroup="$styleGroup" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <CheckMenuItem mnemonicParsing="false" onAction="#setAlwaysOnTop" text="%alwaysOnTop" />
+                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#about" text="%about" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         <fx:include fx:id="topMenuButtons" source="TopMenuButton.fxml" />
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
